@@ -1,0 +1,28 @@
+Package: rutils
+Title: My R Utilities
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Shun",
+           family = "Asai",
+           role = c("aut", "cre"),
+           email = "syun.asai@gmail.com")
+Description: R utilities of me, by me, for me.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat
+Imports: 
+    data.table,
+    dplyr,
+    fs,
+    ggplot2,
+    glue,
+    lubridate,
+    magrittr,
+    pryr,
+    purrr,
+    rlang,
+    stringr,
+    xml2
