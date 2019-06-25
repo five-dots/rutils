@@ -38,12 +38,12 @@ test_that("read_last_file() returns correct data.", {
 
 test_that("get_date_from_file() returns correct data.", {
   ## Type check
-  expect_equal(get_date_from_file("_2018-12-31.csv"),
-               lubridate::ymd("2018-12-31"))
+  expect_equal(get_date_from_file(c("_2018-12-31.csv",
+                                    "_2019-01-01.csv")),
+               c(lubridate::ymd("2018-12-31"),
+                 lubridate::ymd("2019-01-01")))
   expect_true(is.na(get_date_from_file("hoge_20181231.csv")))
 
   ## Error check
   expect_error(get_date_from_file(1))
-  expect_error(get_date_from_file("hoge_2018-12-31.csv",
-                                  "fuga_2019-01-31.csv"))
 })

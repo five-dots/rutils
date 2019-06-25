@@ -7,10 +7,10 @@
 get_date_from_file(path)
 }
 \arguments{
-\item{path}{File path}
+\item{path}{Charactoer vector of file paths}
 }
 \value{
-Date object
+Date vector
 }
 \description{
 Get date from file name

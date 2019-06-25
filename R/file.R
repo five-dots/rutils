@@ -40,15 +40,18 @@ read_last_file <- function(dir, file_regex = NULL) {
 
 #' Get date from file name
 #'
-#' @param path File path
+#' @param path Charactoer vector of file paths
 #'
-#' @return Date object
+#' @return Date vector
 #' @export
 get_date_from_file <- function(path) {
-  stopifnot(is.character(path), length(path) == 1)
+  stopifnot(is.character(path), length(path) > 0)
   regex <- "[0-9]{4}-[0-9]{2}-[0-9]{2}.[a-z,1-9]+$"
-  stringr::str_extract(path, regex) %>%
-    stringr::str_split("\\.") %>%
-    purrr::pluck(1, 1) %>%
+  purrr::map(path, ~ {
+    stringr::str_extract(.x, regex) %>%
+      stringr::str_split("\\.") %>%
+      purrr::pluck(1, 1)
+  }) %>%
+    unlist() %>%
     lubridate::ymd()
 }
