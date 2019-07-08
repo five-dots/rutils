@@ -15,7 +15,7 @@ unescape_html <- function(strings) {
 
 exec_file <- function() {
   args <- commandArgs(trailingOnly = FALSE)
-  file <- stringr::str_subset(args, "^--file=*.R$") %>%
+  file <- stringr::str_subset(args, "^--file=.*.R$") %>%
     stringr::str_remove("^--file=")
 
   if (length(file) == 0) return(NULL)
