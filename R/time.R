@@ -15,3 +15,16 @@ make_duration <- function(hhmmss) {
     lubridate::dminutes(parts[2]) +
     lubridate::dseconds(parts[3])
 }
+
+#' Make lubridate duration object from HH:MM:SS string
+#'
+#' @param msec Elapsed milliseconds from epoch
+#' @param tz Timezone
+#'
+#' @return POSIXct with millisecond accuracy
+#' @export
+make_dt_from_msec <- function(msec, tz = "America/New_York") {
+  stopifnot(is.numeric(msec), length(msec) > 0,
+            is.character(tz), length(tz) == 1)
+  as.POSIXct(msec/1000, origin = "1970-01-01", tz = tz) + 0.0005
+}
