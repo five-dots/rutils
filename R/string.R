@@ -31,5 +31,7 @@ exec_file <- function() {
 log_str <- function(message) {
   stopifnot(is.character(message), length(message) == 1)
   date_time <- format(Sys.time(), "%Y/%m/%d (%a) %H:%M:%S")
-  stringr::str_c(date_time, exec_file(), message, "\n", sep = " ")
+
+  message <- stringr::str_c(message, "\n")
+  stringr::str_c(date_time, exec_file(), message, sep = " ")
 }
