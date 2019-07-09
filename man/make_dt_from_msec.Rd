@@ -2,7 +2,7 @@
 % Please edit documentation in R/time.R
 \name{make_dt_from_msec}
 \alias{make_dt_from_msec}
-\title{Make lubridate duration object from HH:MM:SS string}
+\title{Make POSIXct from elapsed millisecond from epoch}
 \usage{
 make_dt_from_msec(msec, tz = "America/New_York")
 }
@@ -15,5 +15,5 @@ make_dt_from_msec(msec, tz = "America/New_York")
 POSIXct with millisecond accuracy
 }
 \description{
-Make lubridate duration object from HH:MM:SS string
+Make POSIXct from elapsed millisecond from epoch
 }

@@ -16,7 +16,7 @@ make_duration <- function(hhmmss) {
     lubridate::dseconds(parts[3])
 }
 
-#' Make lubridate duration object from HH:MM:SS string
+#' Make POSIXct from elapsed millisecond from epoch
 #'
 #' @param msec Elapsed milliseconds from epoch
 #' @param tz Timezone
@@ -27,4 +27,28 @@ make_dt_from_msec <- function(msec, tz = "America/New_York") {
   stopifnot(is.numeric(msec), length(msec) > 0,
             is.character(tz), length(tz) == 1)
   as.POSIXct(msec/1000, origin = "1970-01-01", tz = tz) + 0.0005
+}
+
+#' Make today's POSIXct of specified time and timezone
+#'
+#' @param hour Hour
+#' @param min Minute
+#' @param sec Second
+#' @param tz Timezone
+#'
+#' @return POSIXct
+#' @export
+make_today_time <- function(hour = 0, min = 0, sec = 0,
+                            tz = "America/New_York") {
+
+  stopifnot(0 <= hour, hour < 24, length(hour) == 1,
+            0 <= min, min < 60, length(min) == 1,
+            0 <= sec, sec < 60, length(sec) == 1,
+            is.character(tz), length(tz) == 1)
+
+  td <- lubridate::today(tzone = tz)
+  lubridate::make_datetime(lubridate::year(td),
+                           lubridate::month(td),
+                           lubridate::day(td),
+                           hour, min, sec, tz = tz)
 }
