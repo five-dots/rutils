@@ -12,6 +12,8 @@ test_that("remove_outliers() returns correct data.", {
   expect_equal(nrow(filtered), 98)
 
   ## Error check
+  expect_error(remove_outliers(NULL, x, 0.01))
+  expect_error(remove_outliers(data.frame(), x, 0.01))
   expect_error(remove_outliers(data, x, 0.51))
   expect_error(remove_outliers(data, x, -0.01))
 })
