@@ -1,8 +1,8 @@
-#' Convert factor to numeric
+#' Remove outliers from data.frame
 #'
 #' @param data data.frame
 #' @param x column name to filter
-#' @param outlier_percent Percent to remove
+#' @param outlier_percent Upper and lower bound percent to remove
 #'
 #' @return data.frame
 #' @export
@@ -13,7 +13,7 @@ remove_outliers <- function(data, x, outlier_percent = NULL) {
   x <- dplyr::enquo(x)
   data %>%
     dplyr::mutate(rank = dplyr::percent_rank(!!x)) %>%
-    dplyr::filter(outlier_percent <= .data$rank &
+    dplyr::filter(.data$rank >= outlier_percent &
                   .data$rank <= (1 - outlier_percent)) %>%
     dplyr::select(-rank)
 }
