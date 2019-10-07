@@ -1,2 +1,0 @@
-# rutils
-My R utilities.
