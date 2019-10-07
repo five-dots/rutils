@@ -1,7 +1,7 @@
 #+STARTUP: indent
 
 * rutils
-My R utilities.
+Personal R function library.
 
 ** Installation
 
@@ -44,5 +44,3 @@ library(rutils)
 - ~view_types()~ Wrapper function to view object type information by ~typeof()~, ~mode()~, ~class()~, ~pryr::otype()~, ~pryr::ftype()~, ~pryr::sexp_type()~.
 
 - ~view_data()~
-
-** TODOs
