@@ -1,9 +1,9 @@
 #+STARTUP: indent
 
-file:https://travis-ci.org/five-dots/rutils.svg?branch=master
+[[file:https://travis-ci.org/five-dots/rutils.svg?branch=master]]
 
 * rutils
-R's utility functions library.
+R utility functions library.
 
 ** Installation
 
@@ -46,3 +46,5 @@ library(rutils)
 - ~view_types()~ Wrapper function to view object type information by ~typeof()~, ~mode()~, ~class()~, ~pryr::otype()~, ~pryr::ftype()~, ~pryr::sexp_type()~.
 
 - ~view_data()~ Combine ~str()~, ~head()~ and ~tail()~ to view data.
+** TODOs
+- [ ] Expand test coverage.
