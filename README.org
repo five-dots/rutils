@@ -1,7 +1,7 @@
 #+STARTUP: indent
 
 * rutils
-Personal R function library.
+R's utility functions library.
 
 ** Installation
 
@@ -18,7 +18,7 @@ library(rutils)
 - ~as_numeric_factor(x)~ Convert factor to numeric. Just implement the discussion [[https://stackoverflow.com/questions/3418128/how-to-convert-a-factor-to-integer-numeric-without-loss-of-information][here]].
 
 *** file
-- ~read_last_file(dir, file_regex = NULL)~ Wrapper function of ~data.frame::fread~ and ~readRDS~ to read the latest csv file in the directory. Automatically select a read function based on the file's extension. Currenty supports ~.csv~, ~.rds~ and ~.zip~.
+- ~read_last_file(dir, file_regex = NULL)~ Wrapper function of ~data.frame::fread()~ and ~readRDS()~ to read the latest csv file in the directory. Automatically select a read function based on the file's extension. Currenty supports ~.csv~, ~.rds~ and ~.zip~.
 
 - ~get_date_from_file(path)~ Extract ~Date~ object from file path that ends with "YYYY-mm-dd".
 
@@ -31,16 +31,16 @@ library(rutils)
 *** string
 - ~unescape_html(strings)~ Vectorized function to convert HTML string (e.g. convert "S&amp;P500" to "S&P500") as discussed [[https://stackoverflow.com/questions/5060076/convert-html-character-entity-encoding-in-r][here]].
 
-- ~log_str(message)~ Convenient function for logging messages when you run a Rscript. It write a message with date time and executed file path.
+- ~log_str(message)~ Convenient function for logging messages when you run a Rscript. It writes a message with the date time and the executed file path.
 
 *** time
-- ~make_duration(hhmmss)~ Make ~lubridate::duration()~ object from "HH:MM:SS" string.
+- ~make_duration(hhmmss)~ Make a ~lubridate::duration()~ object from "HH:MM:SS" string.
 
-- ~make_dt_from_msec(msec, tz = "America/New_York")~ Make POSIXct object by elapsed milliseconds from UNIX epoch.
+- ~make_dt_from_msec(msec, tz = "America/New_York")~ Make a POSIXct object by elapsed milliseconds from UNIX epoch.
 
-- ~make_today_time(hour = 0, min = 0, sec = 0, tz = "America/New_York")~ Make POSIXct of today's with time specified.
+- ~make_today_time(hour = 0, min = 0, sec = 0, tz = "America/New_York")~ Make a POSIXct of today's with time specified.
 
 *** viewer
 - ~view_types()~ Wrapper function to view object type information by ~typeof()~, ~mode()~, ~class()~, ~pryr::otype()~, ~pryr::ftype()~, ~pryr::sexp_type()~.
 
-- ~view_data()~
+- ~view_data()~ Combine ~str()~, ~head()~ and ~tail()~ to view data.
