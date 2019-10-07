@@ -14,24 +14,25 @@ read_last_file <- function(dir, file_regex = NULL) {
             fs::dir_exists(dir))
 
   files <- fs::dir_ls(dir, regexp = file_regex, type = "file")
+
   ## Stop if no file
   stopifnot(length(file) > 0)
 
   ## Use last file
   file <- utils::tail(files, 1)
 
-  ## Zip
-  if (stringr::str_detect(file, ".zip$")) {
-    cmd <- glue::glue("unzip -p {file}")
-    data.table::fread(cmd = cmd, data.table = FALSE)
-
   ## CSV
-  }  else if (stringr::str_detect(file, ".csv$")) {
+  if (stringr::str_ends(file, ".csv")) {
     data.table::fread(file, data.table = FALSE)
 
   ## RDS
-  }  else if (stringr::str_detect(file, ".rds$")) {
+  } else if (stringr::str_ends(file, ".rds")) {
     readRDS(file)
+
+  ## Zip
+  } else if (stringr::str_ends(file, ".zip$")) {
+    cmd <- glue::glue("unzip -p {file}")
+    data.table::fread(cmd = cmd, data.table = FALSE)
 
   } else {
     stop("No applicable method found for the file.")
