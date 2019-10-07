@@ -1,5 +1,7 @@
 #+STARTUP: indent
 
+file:https://travis-ci.org/five-dots/rutils.svg?branch=master
+
 * rutils
 R's utility functions library.
 
