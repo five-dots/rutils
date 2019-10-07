@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_frame.R
 \name{remove_outliers}
 \alias{remove_outliers}
-\title{Convert factor to numeric}
+\title{Remove outliers from data.frame}
 \usage{
 remove_outliers(data, x, outlier_percent = NULL)
 }
@@ -11,11 +11,11 @@ remove_outliers(data, x, outlier_percent = NULL)
 
 \item{x}{column name to filter}
 
-\item{outlier_percent}{Percent to remove}
+\item{outlier_percent}{Upper and lower bound percent to remove}
 }
 \value{
 data.frame
 }
 \description{
-Convert factor to numeric
+Remove outliers from data.frame
 }
