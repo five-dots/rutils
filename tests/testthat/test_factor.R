@@ -10,5 +10,5 @@ test_that("as_numeric_factor() returns correct data.", {
   expect_is(tested, "numeric")
 
   ## Dimention check
-  expect_equal(length(tested), 3)
+  expect_equal(tested, 4:6)
 })
