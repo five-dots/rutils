@@ -13,7 +13,8 @@ LazyData: true
 RoxygenNote: 6.1.1
 Suggests: 
     testthat
-Imports: 
+Imports:
+    assertthat,
     data.table,
     dplyr,
     fs,
@@ -21,6 +22,7 @@ Imports:
     glue,
     lubridate,
     magrittr,
+    pacman,
     pryr,
     purrr,
     rlang,
