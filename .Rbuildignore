@@ -1,1 +1,4 @@
 ^LICENSE\.md$
+^README\.org$
+^.travis\.yml$
+

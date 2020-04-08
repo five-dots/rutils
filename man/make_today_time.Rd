@@ -4,8 +4,7 @@
 \alias{make_today_time}
 \title{Make today's POSIXct of specified time and timezone}
 \usage{
-make_today_time(hour = 0, min = 0, sec = 0,
-  tz = "America/New_York")
+make_today_time(hour = 0, min = 0, sec = 0, tz = "America/New_York")
 }
 \arguments{
 \item{hour}{Hour}
